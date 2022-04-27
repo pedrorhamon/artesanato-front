@@ -3,6 +3,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import Card from '../components/card'
 import FormGroup from '../components/form-group'
+import InputMask from 'react-input-mask'
 
 import UsuarioService from '../app/service/usuarioService'
 import { mensagemSucesso, mensagemErro } from '../components/toastr'
@@ -13,8 +14,11 @@ class CadastroUsuario extends React.Component{
         nome : '',
         email: '', 
         senha: '',
+        celular: '',
+        cpf: '',
         senhaRepeticao : ''
     }
+    
 
     constructor(){
         super();
@@ -23,8 +27,8 @@ class CadastroUsuario extends React.Component{
 
     cadastrar = () => {
 
-        const {nome, email, senha, senhaRepeticao } = this.state        
-        const usuario = {nome,  email, senha, senhaRepeticao }
+        const {nome, email, senha, cpf, celular, senhaRepeticao } = this.state        
+        const usuario = {nome,  email, senha, cpf, celular, senhaRepeticao }
 
         try{
             this.service.validar(usuario);
@@ -60,6 +64,22 @@ class CadastroUsuario extends React.Component{
                                        name="nome"
                                        onChange={e => this.setState({nome: e.target.value})} />
                             </FormGroup>
+                            <FormGroup label="CPF: *" htmlFor="inputCpf">
+                                <InputMask 
+                                       id="inputCpf" 
+                                       mask="000.000.000-00"
+                                       className="form-control" 
+                                       placeholder="000.000.000-00"
+                                       name="cpf"
+                                       onChange={e => this.setState({cpf: e.target.value})} />
+                            </FormGroup>
+                            <FormGroup label="Celular: *" htmlFor="inputCelular">
+                                <input type="text" 
+                                       id="inputcelular" 
+                                       className="form-control"
+                                       name="celular"
+                                       onChange={e => this.setState({celular: e.target.value})} />
+                            </FormGroup>
                             <FormGroup label="Email: *" htmlFor="inputEmail">
                                 <input type="email" 
                                        id="inputEmail"
@@ -74,7 +94,7 @@ class CadastroUsuario extends React.Component{
                                        name="senha"
                                        onChange={e => this.setState({senha: e.target.value})} />
                             </FormGroup>
-                            <FormGroup label="Repita a Senha: *" htmlFor="inputRepitaSenha">
+                            <FormGroup label="Confirme a Senha: *" htmlFor="inputRepitaSenha">
                                 <input type="password" 
                                        id="inputRepitaSenha"
                                        className="form-control"

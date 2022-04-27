@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 
 import UsuarioService from '../app/service/usuarioService'
 import { mensagemErro } from '../components/toastr'
-import { AuthContext  } from '../main/provedorAutenticacao'
+import { AuthContext  } from '../main/provedor-autenticacao'
 
 class Login extends React.Component{
 
