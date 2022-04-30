@@ -12,6 +12,7 @@ class ApiService {
     constructor(apiurl){
         this.apiurl = apiurl;
     }
+    
 
     static registrarToken(token){
         if(token){
@@ -39,6 +40,8 @@ class ApiService {
         return httpClient.get(requestUrl)
     }
 }
+
+
 
 
 export default ApiService;

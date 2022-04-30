@@ -14,8 +14,8 @@ class CadastroUsuario extends React.Component{
         nome : '',
         email: '', 
         senha: '',
-        celular: '',
         cpf: '',
+        celular: '',
         senhaRepeticao : ''
     }
     
@@ -26,7 +26,7 @@ class CadastroUsuario extends React.Component{
     }
 
     cadastrar = () => {
-
+        debugger
         const {nome, email, senha, cpf, celular, senhaRepeticao } = this.state        
         const usuario = {nome,  email, senha, cpf, celular, senhaRepeticao }
 
@@ -65,9 +65,8 @@ class CadastroUsuario extends React.Component{
                                        onChange={e => this.setState({nome: e.target.value})} />
                             </FormGroup>
                             <FormGroup label="CPF: *" htmlFor="inputCpf">
-                                <InputMask 
+                                <input type='text' 
                                        id="inputCpf" 
-                                       mask="000.000.000-00"
                                        className="form-control" 
                                        placeholder="000.000.000-00"
                                        name="cpf"

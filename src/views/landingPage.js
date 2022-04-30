@@ -10,7 +10,7 @@ class LandingPage extends React.Component {
     render(){
         return (
             <div className="container text-center" >
-                <h2>Bem vindo exposição de Artesanato Pelas de Crochê</h2>
+                <h2>Bem vindo exposição de Artesanato</h2>
             </div>
         )
     }

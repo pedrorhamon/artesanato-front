@@ -5,7 +5,7 @@ import { AuthConsumer } from '../main/provedor-autenticacao'
 
 function Navbar(props){
     return (
-        <div className="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div className="container">
           <a href="/home" className="navbar-brand">Obras de Artesanato</a>
           <button className="navbar-toggler" type="button" 
